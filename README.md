@@ -21,10 +21,9 @@ many other products as well.
 ## How do I use this?
 
 Add FreeTypeAmalgam.c to your existing project, include FreeTypeAmalgam.h
-in the source files where you want to use FreeType, and that's it!
-
-For the rare case where you want to re-create the amalgamation yourself,
-you can build it using the [FreeType Amalgamation Template][3].
+in the source files where you want to use FreeType, and that's it! For the
+rare case where you want to re-create the amalgamation yourself, you can
+build it using the [FreeType Amalgamation Template][3].
 
 ## License
 
