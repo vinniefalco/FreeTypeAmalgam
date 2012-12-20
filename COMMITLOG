@@ -1,3 +1,137 @@
+c6a66b49e64e9a21c013f23c867d238cf1aa98cb 2012-12-20 * Version 2.4.11 released. ==========================
+d7383b7b86bf9d8e37d73d2ac1a7fec54d8f746e 2012-12-20 [base] Improve trigonometric core.
+768590a99d36e87dd00df30435f274a4567f6ce3 2012-12-20 * src/base/ftobjs.c (ft_property_do): Fix compiler warning.
+df018924d91bd0d35bd9021c9932869a166a0d11 2012-12-20 Formatting.
+32fc416f5752a358adcc88a36f53502f5e7500f5 2012-12-19 * src/base/ftrfork.c (FT_Raccess_Guess): Switch to FT_Int counters.
+06174dbb207aa782e2a2827a2f52d7f1369b3d3f 2012-12-19 [base] Clean up trigonometric core.
+1749ae20a7ef313c4a23a470f8f2629abee71aad 2012-12-18 [truetype] Minor performance enhancement.
+94b79e74532373ad8da0eb28d1fb08dd754647ff 2012-12-17 [truetype] Remove unusued code and variables.
+a9f6f85e77b5e81734cb3112fa3e091d4b5de3c3 2012-12-17 Various compiler warning fixes.
+461cc9365c80559e65993cfb3adfc0f832b62055 2012-12-16 Merge branch 'master' of ssh://git.sv.nongnu.org/srv/git/freetype/freetype2
+71f242c26ace99cdebecb9fdda0a580da89e3112 2012-12-16 [truetype ] Remove unusued code.  Add minor fixes.
+e2fa4a6c899a4b81c2bda747195899450d5266ed 2012-12-16 [truetype] Remove dead code.
+309b8b31e0319e659b32a0187fc52e56943882cc 2012-12-16 [sfnt] Fix Savannah bug #37936.
+8ac5c5c8a570fdb9a92e8f811e3ea5b623188ee1 2012-12-15 [base] Fix 11-year old bug.
+7f2e4f4f553f6836be7683f66226afac3fa979b8 2012-12-15 [bdf] Fix Savannah bug #37907.
+07bdb6e289c7954e2a533039dc93c1c136099d2d 2012-12-15 [bdf] Fix Savannah bug #37906.
+9b6b5754b57c12b820e01305eb69b8863a161e5a 2012-12-15 [bdf] Fix Savannah bug #37905.
+65d6572105c0d2ff1c0ac668f193b73e713c4312 2012-12-10 [truetype] Scale F_dot_P down.
+13e87e0426168a684dd85193f627995a5b9470ab 2012-12-09 Formatting.
+06d6916c96954465ed66041507d343dc982b506f 2012-12-09 [type1] Another fix for 2012-09-17 commit.
+f5e2e3982826a55b0a82bb6671c774af772cbfd3 2012-12-08 Add .mailmap file.
+cece4d3b5decf533270beba8549b5bfa6b51deed 2012-12-06 [truetype] Tweak the previous commit.
+5ad05f97b60e14c0a8bf58e74016c375d2ee78c0 2012-12-06 [truetype] Microoptimizations in bytecode interpreter.
+b50088bd9c20c21a37afbc3b77d3cc6a7a36b408 2012-12-05 [truetype] Cosmetic improvement in bytecode interpreter.
+54d43a39c5a25919293763af19cc6d7aeacafd2a 2012-12-05 [pshinter] Clamp BlueScale value.
+4d3a1e6c9634d208b4c88212e26eac55805cdbeb 2012-12-05 Formatting.
+4ae9cbb02544a5305625444bfe3f8c2b699c5303 2012-12-01 [truetype, type1] Revise the use of FT_MulDiv.
+74e6a1f26f4f4c65e05352fcdf12fc3e0a4705ff 2012-11-30 [doc] Minor improvements.
+b731c8274aefff511f8b39b132ff091fb92805f7 2012-11-30 Minor.
+7e8e1761df141164d5d999de014486623810b403 2012-11-30 [configure] Preserve customized `ftoption.h'.
+337fcb6ad6ca9df4347fb57217836417db6cbf15 2012-11-29 [type1] Fix Savannah bug #37831.
+6a126e14c4cd128b53e865a24480c9b144d3a25a 2012-11-28 [truetype] Fix formatting and typo.
+79180ad049b3e1ecf9f0348fb284d3b49554b568 2012-11-27 [cid, type1, type42] Clean up units_per_EM calculations.
+72e976d41565bdae7025cb4fda4f25acec92b022 2012-11-27 [ftstroke] Minor improvement.
+fa22ec1cfba5975c0622e374f8506c742d3f8d18 2012-11-17 * src/base/fttrigon.c (ft_trig_downscale): Make 64bit version work.
+0690d3d7b59ccb54a9938ff99c8621350780fc6e 2012-11-15 [base] Fix integer overflows in dd5718c7d67a.
+3a55340029783ec9ab738698e3e3ab2cd74c882e 2012-11-15 [autofit] Trace stem widths.
+55127272c4d67e662e18805917601fe56df8f83f 2012-11-13 [cff] Add support for OpenType Collections (OTC).
+1a37e4174bf2a4353b5b6dc2e089eb0765c1dc8f 2012-11-12 [autofit] Minor improvement.
+f966da825c48fca86f239071789391246837ade9 2012-11-10 [autofit] Improve tracing.
+3af607b07d8ac4014c2d6be93ac518a349500dc4 2012-11-04 Improve documentation of Unicode IVS handling.
+21332fb6257cce6bd7c3f9e9ddeb4436ce07a965 2012-11-04 Add example for FT_Get_Sfnt_Table.
+dd5718c7d67a5b6d7dfc2546c9bda734b246142e 2012-11-04 [base] Fortify emboldening code against egregious distortions.
+48ce226ae3c2ccbe3230417d118ada4fea8508e3 2012-11-03 [base] Clean up emboldening code and improve comments there.
+553bb3c3caa38bf73d01f5c3a3ebe5a96070f527 2012-10-24 [autofit] Add standard character to `AF_ScriptClassRec' structure.
+118c6025b7dddb86f8027f64b00f8bc3c46a3e0a 2012-10-24 [autofit] Only use Unicode CMap.
+8e82a961e7f5c9c7e91022e3ed45d1e56429ef2a 2012-10-21 [psaux] Improve parsing of invalid numbers.
+fdcbaf19fef106522eb5a5e11acbd04a3fa6330f 2012-10-21 [smooth] Improve tracing.
+24e897db28da40dc522886953cf301e3ff92c122 2012-10-20 [truetype] Cheaper way to threshold angles between vectors.
+ad4eecca7732a0b7c1ec000d178864df2bbe7629 2012-10-20 [cff] Improve parsing of invalid real numbers.
+1e1688340e381cc77d8325e3cb0d1ed59504b83d 2012-10-20 [sfnt] Load pure CFF fonts wrapped in SFNT container.
+eaf0afb4c75e18d323b7b762ac0c5dd0a8e5202c 2012-10-20 [psaux] Fix some value overflows and improve tracing.
+dda1e93db8cd47717869292203cd9ea12b96291f 2012-10-20 [autofit] Fix `make multi CC=c++'.
+4404ec4ef5b8dfc7edcd92bada5e5e4bcbc9a81a 2012-10-19 [cff] Fix more value errors and improve tracing.
+0708b23e808eefb16a3a46abd738c040381fa0e3 2012-10-17 [psaux] Fix some value overflows.
+76accc184bda4a417001e5fde08dcd670b4a95d5 2012-10-17 [cff] Fix value overflow.
+2df16761c93bd0d49c0b7e3c6df9e05a3b8a763e 2012-10-17 [truetype] Fix Savannah bug #37572.
+4f18d457e2c3a0ead780919521193b0b43ef9e59 2012-10-07 Improve documentation regarding vertical layout.
+be81ec22ccdecb5bf80dd9528223e443e8c03359 2012-09-30 Remove useless `rm' detection.
+bf745003e9f2edde469cfbf162a36045529fdff7 2012-09-29 [autofit] Minor optimization.
+156ba42e4d44b0bf5f92d43c0bc9b46f9cc19c93 2012-09-29 [autofit] Fix thinko.
+7da6bbc34af3d29b9ea50b00738c253ec53174c1 2012-09-25 Typos.
+3683fb55c98eb7f2973b4f3c71c35847e1fc1b27 2012-09-18 [autofit] Implement `increase-x-height' property.
+d180ac70fca55c75272d9668b9ed1418dc9e22f9 2012-09-18 [autofit] Implement Infinality's `increase glyph heights'.
+842c4ea2580a28133daea84bfd884f749e762da7 2012-09-18 [autofit] Add hierarchical property access to some structures.
+273e2b796f206282836496e57fa7093dc7c82ae0 2012-09-18 Cosmetics.
+ebda8b32573726cd6da483b4018913dc2d3f2bb4 2012-09-17 Fix Savannah bug #37350.
+302fd625905c7f281e8fe9d49212234aa78af62e 2012-09-16 [autofit] Cosmetics.
+d4ec0075414a63b6d1850cc801af30e0ef246d92 2012-09-15 [autofit] Implement `fallback-script' property.
+44e1f0d3a008f7d6b1c04bbf9553bb06d2c2fed9 2012-09-15 [autofit] Correct previous Unicode 6.1.0 change.
+ce92c5fabee80e88f73b5081ffeaa12a391b9030 2012-09-15 * src/autofit/afmodule.c: s/FT_Err_/AF_Err_/.
+d0014f2ccbe70ffabae3851dc7c1a1f8fd538b62 2012-09-15 [autofit] Make default script a global property.
+073a4cefbdac04c6b74b097cbb39001a3232db9e 2012-09-15 Use `FT_Module' instead of `FT_Library' argument in property funcs.
+8ae2a65e095ae8392e8bbaad9847cb415e10cb69 2012-09-14 [autofit] Update to Unicode 6.1.0.
+95dae1c47a441b815d3a70c051cdfd9d8ad747d7 2012-09-14 [autofit] Pass `AF_Module' instead of `AF_Loader'.
+6d29c5cbe3abe578430fcc5f90a943740d539f90 2012-09-14 [autofit] Fix `make multi'.
+688da8eea7149f087be725bd6b0a9d4b00139521 2012-09-14 * src/autofit/afmodule.c: s/FT_Autofitter/AF_Module/.
+7bbbcbfb1aa8c908fe713743f2909ba774b2072e 2012-09-12 [autofit] Minor reorganization.
+44481daf4335de767872b3e64bcc231e6ee567bc 2012-09-11 [autofitter] Add some comments.
+2be60cfe7e01abaf1f15bf986069ac7abe93ff4c 2012-09-01 [autofit] Implement `glyph-to-script-map' property.
+7f316f22d1222484af9f7f62face6cb94be777b2 2012-08-31 [autofit] Implement properties service framework.
+0f8fd88e83a9a465f9433f3e0561031bb03f8980 2012-08-30 Implement properties to control FreeType modules.
+403515edcf7d55d8efe4db455c4fb0ef5196524f 2012-08-30 Improve documentation of FT_Request_Size and FT_Set_Pixel_Sizes.
+590344cde09f6b9645e98c5bbe6e5960c34449f1 2012-08-29 [docmaker] Allow `-' in tags and identifiers.
+328aa3b203fc061c207fb01e9cbabea7cb3c9272 2012-08-27 [FT_CONFIG_OPTION_PIC] Fix g++ 4.6.2 compiler warnings.
+06e31e9b5e210a498067d392f27c81aa0199b4bf 2012-08-27 [truetype] Fix compilation warning.
+d9bf44a430339bc40285eb96b0b700eb4ce9d6c3 2012-08-27 [autofit, cff, pshinter, psnames] More renamings for orthogonality.
+0c633e3fcdd572cd5745b48fa01c58ee5262ac77 2012-08-27 [sfnt, truetype] More renamings for orthogonality.
+d0841ea73badc69771413780ea6392eeed733dbd 2012-08-27 [autofit] Some macro and variable renamings for orthogonality.
+9a87937522e8039958b659d1eac6d107531ca776 2012-08-27 [pshinter] Formatting.
+d77b1ea012a64821310fd50128aa5dcdb4677b82 2012-08-27 [sfnt] Formatting.
+b355b5693ab1a7a9c188e38c8fa0d4106ed49f86 2012-08-26 Fix Savannah bug #37178.
+68fe6a9afad5ea2ac61e4f02ed8774603faab7b3 2012-08-26 Formatting.
+6edaef3b14b94136eb11591ed94b67cc8c8c9f12 2012-08-24 [sfnt] More formatting.
+665c65bf86f625b329d9290bd4aae45415443b97 2012-08-24 [sfnt] Formatting.
+ee09c8616360880def9e0e95a4c6fd56a5202a96 2012-08-23 [psnames] Formatting.
+f76f491ff7697481dc96f462e0ef7f97920d8c41 2012-08-23 Fix typos, add comments.
+37ec8c3833ed0e99bf50aee9dccb7b6bb30973aa 2012-08-23 Minor formatting.
+04affa270bd415136da6818643c07e838ba3da47 2012-08-17 * src/base/ftsynth.c (FT_GlyphSlot_Oblique): Fix shear angle.
+3d3ff4b2f951ef592904aa4462d76997db8e572c 2012-08-16 Formatting.
+2f6be4c854d1173159507ea9906d3b3559590154 2012-08-14 Document module names.
+9ea55c7c333e47345de2dff0e613e3e23dc8fdd3 2012-08-12 Fix Savannah bug #37017.
+5b995a8dd849a309038103fc1c96c3040a04f81b 2012-08-05 [autofit] Improve recognition of flat segments.
+e194d7cd61012e0524cdb62a18b774762dfb06a3 2012-08-05 [autofit] Variable renamings.
+5cdeb3cd6028bbc585a4538bb141be1a5acc7cfa 2012-07-31 Fix Savannah bug #37000.
+5987445073894155e3a1811e84f60b2804fd4fa8 2012-07-29 Formatting, comment fixes.
+6274bd370f9fb63ec9fdcdc30dcfebac02b5d044 2012-07-25 Typo.
+6b440425fc0d2ba82068972e38e3e67ba5e88d6d 2012-07-18 Fix Savannah bug #36833.
+01b508f2470a482308187a26b2a9af6bddce87e7 2012-07-18 Fix Savannah bug #36832.
+a8c243514c9e2349f8aaabcb14da2d0a5cddceea 2012-07-18 Fix Savannah bug #36829.
+bc5bcecfd2424394130d46f9f2e9f0ef52299599 2012-07-13 Revert the last commit 45337b07.
+45337b07a7537e6c6bce91799ff05895f381cc21 2012-07-11 [ftstroke] Fix uninitialized return value.
+e7454a47e26272743c96dac5d602c20643ccc06d 2012-07-11 [smooth] Avoid memory like in case of failure.
+fff6dcf1fee82b4ee34c2401b200d528bf32679c 2012-07-10 Improve documentation of FT_LOAD_NO_SCALE.
+26472b4f166d0ac2f3f3b31fa6c047a5cadc828b 2012-07-09 Fix compilation with MSVC 5.0.
+5a0af493e49907c8e7434b769a2c92d3f9d2338b 2012-07-09 [autofit] Improve debugging messages; do some code cleanup.
+9123404c578f6cfb6b69e9b23fbce357027d2bfc 2012-07-07 Fix strict-aliasing warning.
+fec113d7245b98631b8bded8be20aa1dc1d3991a 2012-07-07 [ARM] Fix FT_MulFix_arm.
+b6978dd0c949aedbaa1773724e19fec47a34a29c 2012-07-06 [autofit] Do some code cleanup.
+fd5ae9599ad674db14a3730f2a07e11e0407b182 2012-07-05 [autofit] Improve output of debugging information.
+5210306145ce372ec167cc79ae03563d1103217b 2012-07-04 Fix Savannah bug #36091.
+e8da532d2a87a2210dc8ddc07966dcf01dd07bd7 2012-07-04 [autofit] Improve comment.
+09e9b596053e5a4e799a92a160a1f47494aafca8 2012-07-04 [autofit] Beautify blue zone tracing.
+2a9c4552f6b80838e2024486620ce220c0405398 2012-07-03 [autofit] Quantize stem widths.
+d4cbbf35d44c96641be5b614181d058c51623500 2012-07-03 [autofit] Minor speed-up.
+ad866e2c9aa54afc8d2a702ae078b43055d5bd4b 2012-06-30 Fix `checking if gcc static flag -static works' test.
+d0a827b3402e244f8d44da54978be2e15a2cb8af 2012-06-28 [truetype] Fix various artifacts.
+34de9d264444c4b610cc910427838ce1d13a3307 2012-06-28 Fix CFLAGS and LDFLAGS share configure test.
+b3953aa7c4de80d1f51aa0a5d422bb88b1f3bcf2 2012-06-28 [truetype] Set the `subpixel_positioned' flag unconditionally.
+124709657a2762a76b75c1bcec676b69b4994994 2012-06-27 Fix conditional compilation.
+83c0ebabc2125215d8179fb777366fbce9777bb8 2012-06-27 Fix conditional compilation.
+ed6508c41a23831ae173accb5b124da0b6cc3f6d 2012-06-26 [truetype] Remove unused rounding functionality.
+56751532d3ebd1318742415ad5c7c2667754e60b 2012-06-25 [cff] Fix Savannah bug #36705.
+79e36baebba4532dff92ca1ca43c4dc2f779fd32 2012-06-18 [truetype] Support subpixel hinting.
 320613eeb83d0cd704de3e6adfb13dce787861bb 2012-06-15 * Version 2.4.10 released. ==========================
 cea9d7a6820bf7cca8d79d813908ce085a3d3d5d 2012-06-15 * src/base/ftsynth.c (FT_GlyphSlot_Embolden): Improve spacing.
 a03cb019aa1d0c73c4be9a4e79f5f21c89ca6a44 2012-06-14 * builds/exports.mk: Add CCexe_CFLAGS and CCexe_LDFLAGS.

@@ -59,7 +59,7 @@
 /*                                                                         */
 /*    Build macros of the FreeType 2 library.                              */
 /*                                                                         */
-/*  Copyright 1996-2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2010 by */
+/*  Copyright 1996-2008, 2010, 2012 by                                     */
 /*  David Turner, Robert Wilhelm, and Werner Lemberg.                      */
 /*                                                                         */
 /*  This file is part of the FreeType project, and may only be used,       */
@@ -351,6 +351,18 @@
    *
    */
 #define FT_RENDER_H  <freetype/ftrender.h>
+
+  /*************************************************************************
+   *
+   * @macro:
+   *   FT_AUTOHINTER_H
+   *
+   * @description:
+   *   A macro used in #include statements to name the file containing
+   *   structures and macros related to the auto-hinting module.
+   *
+   */
+#define FT_AUTOHINTER_H  <freetype/ftautoh.h>
 
   /*************************************************************************
    *
@@ -1449,6 +1461,27 @@ FT_BEGIN_HEADER
 
   /*************************************************************************/
   /*                                                                       */
+  /* Define TT_CONFIG_OPTION_SUBPIXEL_HINTING if you want to compile       */
+  /* EXPERIMENTAL subpixel hinting support into the TrueType driver.  This */
+  /* replaces the native TrueType hinting mechanism when anything but      */
+  /* FT_RENDER_MODE_MONO is requested.                                     */
+  /*                                                                       */
+  /* Enabling this causes the TrueType driver to ignore instructions under */
+  /* certain conditions.  This is done in accordance with the guide here,  */
+  /* with some minor differences:                                          */
+  /*                                                                       */
+  /*  http://www.microsoft.com/typography/cleartype/truetypecleartype.aspx */
+  /*                                                                       */
+  /* By undefining this, you only compile the code necessary to hint       */
+  /* TrueType glyphs with native TT hinting.                               */
+  /*                                                                       */
+  /*   This option requires TT_CONFIG_OPTION_BYTECODE_INTERPRETER to be    */
+  /*   defined.                                                            */
+  /*                                                                       */
+/* #define TT_CONFIG_OPTION_SUBPIXEL_HINTING */
+
+  /*************************************************************************/
+  /*                                                                       */
   /* If you define TT_CONFIG_OPTION_UNPATENTED_HINTING, a special version  */
   /* of the TrueType bytecode interpreter is used that doesn't implement   */
   /* any of the patented opcodes and algorithms.  The patents related to   */
@@ -1686,7 +1719,7 @@ FT_END_HEADER
 /*    ANSI-specific library and header configuration file (specification   */
 /*    only).                                                               */
 /*                                                                         */
-/*  Copyright 2002-2007, 2009, 2011 by                                     */
+/*  Copyright 2002-2007, 2009, 2011-2012 by                                */
 /*  David Turner, Robert Wilhelm, and Werner Lemberg.                      */
 /*                                                                         */
 /*  This file is part of the FreeType project, and may only be used,       */
@@ -1823,7 +1856,7 @@ FT_END_HEADER
 								/*       on certain platforms           */
 
 #define ft_longjmp     longjmp
-#define ft_setjmp( b ) setjmp( *(jmp_buf*) &(b) )    /* same thing here */
+#define ft_setjmp( b ) setjmp( *(ft_jmp_buf*) &(b) ) /* same thing here */
 
   /* the following is only used for debugging purposes, i.e., if */
   /* FT_DEBUG_LEVEL_ERROR or FT_DEBUG_LEVEL_TRACE are defined    */
@@ -2129,7 +2162,8 @@ FT_BEGIN_HEADER
 	  "mov    %0, %1, lsr #16\n\t"      /* %0  = %1 >> 16 */
 	  "orr    %0, %0, %2, lsl #16\n\t"  /* %0 |= %2 << 16 */
 	  : "=r"(a), "=&r"(t2), "=&r"(t)
-	  : "r"(a), "r"(b) );
+	  : "r"(a), "r"(b)
+	  : "cc" );
 	return a;
   }
 
@@ -2636,7 +2670,7 @@ FT_END_HEADER
 /*                                                                         */
 /*    FreeType error codes (specification).                                */
 /*                                                                         */
-/*  Copyright 2002, 2004, 2006, 2007, 2010-2011 by                         */
+/*  Copyright 2002, 2004, 2006, 2007, 2010-2012 by                         */
 /*  David Turner, Robert Wilhelm, and Werner Lemberg.                      */
 /*                                                                         */
 /*  This file is part of the FreeType project, and may only be used,       */
@@ -2685,6 +2719,8 @@ FT_END_HEADER
 				"array allocation size too large" )
   FT_ERRORDEF_( Missing_Module,                              0x0B, \
 				"missing module" )
+  FT_ERRORDEF_( Missing_Property,                            0x0C, \
+				"missing property" )
 
   /* glyph/character errors */
 
@@ -6115,8 +6151,8 @@ FT_BEGIN_HEADER
    *   FT_HAS_VERTICAL( face )
    *
    * @description:
-   *   A macro that returns true whenever a face object contains vertical
-   *   metrics.
+   *   A macro that returns true whenever a face object contains real
+   *   vertical metrics (and not only synthesized ones).
    *
    */
 #define FT_HAS_VERTICAL( face ) \
@@ -7202,6 +7238,12 @@ FT_BEGIN_HEADER
   /*    particular bitmap strike.  Use @FT_Select_Size instead in that     */
   /*    case.                                                              */
   /*                                                                       */
+  /*    The relation between the requested size and the resulting glyph    */
+  /*    size is dependent entirely on how the size is defined in the       */
+  /*    source face.  The font designer chooses the final size of each     */
+  /*    glyph relative to this size.  For more information refer to        */
+  /*    `http://www.freetype.org/freetype2/docs/glyphs/glyphs-2.html'      */
+  /*                                                                       */
   FT_EXPORT( FT_Error )
   FT_Request_Size( FT_Face          face,
 				   FT_Size_Request  req );
@@ -7268,6 +7310,11 @@ FT_BEGIN_HEADER
   /*                                                                       */
   /* <Return>                                                              */
   /*    FreeType error code.  0~means success.                             */
+  /*                                                                       */
+  /* <Note>                                                                */
+  /*    You should not rely on the resulting glyphs matching, or being     */
+  /*    constrained, to this pixel size.  Refer to @FT_Request_Size to     */
+  /*    understand how requested sizes relate to actual sizes.             */
   /*                                                                       */
   FT_EXPORT( FT_Error )
   FT_Set_Pixel_Sizes( FT_Face  face,
@@ -7379,14 +7426,20 @@ FT_BEGIN_HEADER
    *     behaviour to more specific and useful cases.
    *
    *   FT_LOAD_NO_SCALE ::
-   *     Don't scale the outline glyph loaded, but keep it in font units.
+   *     Don't scale the loaded outline glyph but keep it in font units.
    *
    *     This flag implies @FT_LOAD_NO_HINTING and @FT_LOAD_NO_BITMAP, and
    *     unsets @FT_LOAD_RENDER.
    *
+   *     If the font is `tricky' (see @FT_FACE_FLAG_TRICKY for more), using
+   *     FT_LOAD_NO_SCALE usually yields meaningless outlines because the
+   *     subglyphs must be scaled and positioned with hinting instructions.
+   *     This can be solved by loading the font without FT_LOAD_NO_SCALE and
+   *     setting the character size to `font->units_per_EM'.
+   *
    *   FT_LOAD_NO_HINTING ::
-   *     Disable hinting.  This generally generates `blurrier' bitmap glyph
-   *     when the glyph is rendered in any of the anti-aliased modes.  See
+   *     Disable hinting.  This generally generates `blurrier' bitmap glyphs
+   *     when the glyph are rendered in any of the anti-aliased modes.  See
    *     also the note below.
    *
    *     This flag is implied by @FT_LOAD_NO_SCALE.
@@ -7405,8 +7458,14 @@ FT_BEGIN_HEADER
    *     @FT_LOAD_NO_SCALE always sets this flag.
    *
    *   FT_LOAD_VERTICAL_LAYOUT ::
-   *     Load the glyph for vertical text layout.  _Don't_ use it as it is
-   *     problematic currently.
+   *     Load the glyph for vertical text layout.  In particular, the
+   *     `advance' value in the @FT_GlyphSlotRec structure is set to the
+   *     `vertAdvance' value of the `metrics' field.
+   *
+   *     In case @FT_HAS_VERTICAL doesn't return true, you shouldn't use
+   *     this flag currently.  Reason is that in this case vertical metrics
+   *     get synthesized, and those values are not always consistent across
+   *     various font formats.
    *
    *   FT_LOAD_FORCE_AUTOHINT ::
    *     Indicates that the auto-hinter is preferred over the font's native
@@ -8341,9 +8400,13 @@ FT_BEGIN_HEADER
   /*    code range for CJK characters.                                     */
   /*                                                                       */
   /*    An IVS is registered and unique; for further details please refer  */
-  /*    to Unicode Technical Report #37, the Ideographic Variation         */
-  /*    Database.  To date (October 2007), the character with the most     */
-  /*    variants is U+908A, having 8~such IVS.                             */
+  /*    to Unicode Technical Standard #37, the Ideographic Variation       */
+  /*    Database:                                                          */
+  /*                                                                       */
+  /*      http://www.unicode.org/reports/tr37/                             */
+  /*                                                                       */
+  /*    To date (November 2012), the character with the most variants is   */
+  /*    U+9089, having 31 such IVS.                                        */
   /*                                                                       */
   /*    Adobe and MS decided to support IVS with a new cmap subtable       */
   /*    (format~14).  It is an odd subtable because it is not a mapping of */
@@ -8777,7 +8840,7 @@ FT_BEGIN_HEADER
    */
 #define FREETYPE_MAJOR  2
 #define FREETYPE_MINOR  4
-#define FREETYPE_PATCH  10
+#define FREETYPE_PATCH  11
 
   /*************************************************************************/
   /*                                                                       */
