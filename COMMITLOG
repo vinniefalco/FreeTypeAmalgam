@@ -1,3 +1,103 @@
+26568611186ca19e8b18afd2a9b0c2ce6c188165 2013-05-05 Synchronize `ftconfig.h'.
+dd192ef0b4f43e9ed2c69f37cb6e2d2062405cde 2013-05-05 Fix compilation with C++.
+d135e27c23c089c64581065d5af6f962012fdf37 2013-05-05 Fix 64bit compilation issues.
+073a0e2901e931d457f205d870ee77eb0ed763cb 2013-05-05 [raster] Fix clang issues.
+e6e8362728e2d644835c705ce735c8cc8f4a20a5 2013-05-04 Fix clang fixes.
+77c39b1deb0d44f1a642335ae72af66b91271cf9 2013-05-04 [cff] Make Adobe CFF engine work correctly on 64bit hosts.
+94152819b0cdd134f51beb65e4dad21ba7a212ba 2013-05-04 More fixes for clang's `sanitize' feature.
+138068fd0765493b1a9e9272b35c759316b9e61c 2013-05-04 Formatting.
+afaeeee9a04d0fae16bb4f844e81ca6e54bc93ef 2013-05-04 Fix errors reported by clang's `sanitize' feature.
+99033fefb65af660e0d613ac923c0dc4391d6726 2013-05-03 * src/cff/cf2blues.c: Remove dead code.
+b3c3f86e58e6afa7f1055630ac6bfe96c624d50c 2013-05-03 Minor.
+9bf75e08199794c4a5fcefcbfe71b5d39f42e46d 2013-05-02 * src/cff/cffgload.c: Include FT_CFF_DRIVER_H.
+2048f02e15d658517f23ad2493b7ee53b72c605a 2013-04-29 Minor.
+29f1a927108d296bfbbf804dbee18ced36908899 2013-04-27 README: Improved.
+689d68e5b34bb9ada5d1a3c3e65672d056175d39 2013-04-27 docs/CHANGES: Add ftdemo changes.
+234b987ef62676a5580ce90628ae63b11cf0fb75 2013-04-26 * docs/CHANGES: Updated.
+06474c3e5bef23c3d056403798d1c512f3d0da38 2013-04-13 [cff] Add a new Type 2 interpreter and hinter.
+283c8ed817a645dfd08b5e1fe78a34bd91140389 2013-04-13 [cff] New files for Adobe's Type 2 interpreter and hinting engine.
+831dac881427d0db83ba64fa7cb6f11f9f50cfef 2013-04-12 [cff] Minor code administration issues.
+2dc2662125d276aa81009ab1bc659602903ba134 2013-04-12 Add output bitmap checksums.
+fc185ef41ace0925ed36fd928f3e150ae7cf07be 2013-04-12 Add framework for CFF properties.
+04e547bd2cfaf05498ad98ade10a4ed3a168484e 2013-04-03 Fix Savannah bug #38589.
+2f7ccb2399474a9d197f79916c9c7ad6c958d3d2 2013-03-31 * configure: Use egrep, not grep.
+94720c2c56448bb9d97db7e1a7b9f2f515c5a987 2013-03-29 Typo.
+a705927c6f798f76f770ee0f2f0cca8d6374041e 2013-03-29 * include/freetype/ftlcdfil.h: Add description of color filtering.
+762bf19ab7416a40c8c3cf553bd4f02eec45c3b2 2013-03-24 Typo.
+eed830614f280406f4c4784d4b22429b8c199cb8 2013-03-23 Whitespace.
+fbb0773cb12d40f31843e8299760e22118a86dd6 2013-03-23 [autofit] Minor.
+eb624d7c1726a773ffd46238d7acc73f8cb2d9b7 2013-03-21 * configure: Automatically test for `gmake' also.
+63463b93bc5f08a60a276949cd644160d16cead6 2013-03-21 Respect CONFIG_SHELL from the environment.
+835b9cd586739a5cf086060f40b2d52b335ac40f 2013-03-21 Minor.
+6f1e345d35238775f421e57fb4980abe08fd4920 2013-03-21 Fix Savannah patch #7971.
+b114b7c01ba59df532d7c7efe56ad073c527166f 2013-03-17 Fix Savannah bug #38538.
+5ea06ce0174a95f48b28efdba297672ae5d89981 2013-03-17 Whitespace.
+706fc8337007862deee3d4e24b7300b8a25da01b 2013-03-17 Remove dead code.
+8b4459b85843ee201b7251d1f5328f9ee4132918 2013-03-17 * src/pshinter/pshpic.h (GET_PIC): Use correct container.
+f619abf6b0df403fadca3d530177f1da9e0fa5fa 2013-03-15 * include/freetype/ftmoderr.h: Fix commit from 2013-03-11.
+89f5064765bdedd1f3449d3f8d7b96bfe86aa23d 2013-03-14 */*: Use FT_ERR_EQ, FT_ERR_NEQ, and FT_ERR where appropriate.
+52339dc2742dfd2a1e91aeb1067506e4a7311d35 2013-03-14 New error management macros.
+e3c9301581a450fae5db73a3b94b10ed6a0aeb5e 2013-03-14 */*: Use FT_Err_Ok only.
+059bc335ce42220b222763379e89d0cbf2b949eb 2013-03-14 */*: Use `FT_THROW'.
+c58ce3beee198cff82269a482cd3f6d4c7d43511 2013-03-13 Introduce `FT_THROW' macro.
+dbc6e3f192e237f0d37c8b5fdf4332e90aed6d85 2013-03-12 Remove `FT_KEEP_ERR_PREFIX'.
+c879f24562cc21bb062fb2faa86633a6c8c2371a 2013-03-11 [gxvalid] Fix module error.
+d6bc524bdc54320c78ef791e285ac64621049296 2013-03-11 Always use module related error codes.
+737bbb0457694f6734fcdaefa16551dddaae81f7 2013-03-08 Minor.
+2d8825404653275ac58d1cebf2ec1c205a6f664e 2013-03-08 [cff] Set `linear{Hori,Vert}Advance' for embedded bitmaps also.
+2ba18ba1ce730ed79672801b20f986f10a628c95 2013-02-22 [base] Fix commit ab02d9e8.
+f9434dba81a08ee20822c68133b463209db5c65b 2013-02-19 [base] New bisecting BBox_Cubic_Check (disabled).
+0e536676ba968e974bf2f39376319044e2b23f3e 2013-02-18 [tools] Update BBox testing tool.
+bcca86af30967d7d93590f2241b84d02f083d54e 2013-02-08 Fix Savannah bug #38235.
+a2c7eb188892c6f02cd10cfa814672f3f2820ca8 2013-02-07 * src/truetype/ttobjs.c (tt_size_run_prep): Reset more GS variables.
+bfcc375b06e26cb85e7a74b51f8d1e7915ca7457 2013-02-06 * src/truetype/ttobjs.c (tt_size_run_prep): Reset reference points.
+00dfa3304e7275c1cba822ebd9e760b63d4601fd 2013-02-05 [truetype] A better fix for Savannah bug #38211.
+0eb6316fde158730f6a50670435ad68d3e00286c 2013-02-01 [pcf] Streamline parsing of PCF encoding table.
+3b1f206b04a05f07a86944669e36e67b0145e60b 2013-02-01 Fix Savannah bug #38227.
+30f1e6ca45f83285f565f56d8f714dd50aaa4cf8 2013-02-01 Fix Savannah bug #38221.
+40633205287c8e9ea80e9b8824d8ca5ab651edf1 2013-02-01 [truetype] Fix Savannah bug #38211.
+fba917d0e70da17eb1807b16363cb7d1a6ecef39 2013-01-30 Improve comments.
+d56e544d653b09c657911629557ffc5277a503e3 2013-01-28 Add an important comment.
+6b9034f0fdfcd84e62e7c0d29bfd458325f4ccd7 2013-01-28 Formatting, comment improvements.
+ab02d9e8e76030eec774ce058f005864e14b34ea 2013-01-28 [base] Small optimization of BBox calculation.
+c574d72ca8043443ce1b546f28b27aeb219e8800 2013-01-26 [truetype] Minor formatting fix.
+97ba5109bd73eb6bdb24ef768710ce4109673e17 2013-01-26 [truetype] Fix rasterizer_version logic in sph.
+a5fe359596df306666b7f5abc13f1b605359d22c 2013-01-26 [truetype] Align more to ClearType whitepaper for sph.
+610ee58e07090ead529849b2a454bb6c503b4995 2013-01-25 [base] Fix broken emboldening at small sizes.
+f41ee05475695e301ad282bb63b76658f9589b9b 2013-01-25 Fix Savannah bug #38167.
+ba931be2af19a2a37ad55d66cd7bc53dbc0c18dc 2013-01-25 [sfnt] Fix broken pointer overflow checks.
+817caa9f4f2d018058a697fc4ba5ad92164dc0f3 2013-01-25 Fix `make multi'
+72447195cef09a0cb0139831f11faf1cef7cc8d6 2013-01-25 [truetype] Fix C++ compilation.
+4cd5fd463edd0055c5270a0e13c52983668ce078 2013-01-24 Remove trailing whitespace.
+e9f330adf6eddd1a70a3da33a585b55e0ecddd46 2013-01-24 [base] Make `FT_Hypot' really internal.
+a56f95b26813613ccb123f2818bb4d4c63eac9e1 2013-01-24 Minor.
+87dc86d68c93c2b5b836501ece57583d1d6d1a2e 2013-01-24 [truetype] Revert change from 2013-01-22.
+b6de8e661251ebd14b363b8286e68ce16de20174 2013-01-23 [base, truetype] New internal FT_Hypot function.
+dcc0d070e00179b23766ff52d0fa63cd3ef5aea0 2013-01-23 Typo.
+da11e5e7647b668dee46fd0418ea5ecbc33ae3b2 2013-01-23 [base] Fix integer overflow.
+e1a2ac1900f2f16ec48fb4840a6b7965a8373c2b 2013-01-23 [base] Fix integer overflow.
+869fb8c49ddf292d6daf4826172a308973d3e11f 2013-01-23 [base] Split out MSB function.
+e0469372be3870a5ad60b2c4586e9c281357bd28 2013-01-22 [truetype] Fix font height.
+7190098098f7e1021e9e0c5c4103c5f9f657813f 2013-01-16 Minor.
+cd3f871e8d740dfb79de18bb1047db84bc6bd108 2013-01-16 [sfnt] Fix optimized sbit loader.
+3a40612723c0103c840eaf08536162aa89edca8a 2013-01-16 [truetype] Improve sub-pixel code.
+0e0fdc5dc89e5079898c5da67b56f994c439fee1 2013-01-12 [truetype] Improve accuracy of normalization of short vectors.
+081aba390a648fc10c7ae5e169861f2e9aae2aea 2013-01-12 [truetype] Kill very old vector normalization hacks.
+a692170a238f4bdb5fdb3b7b7c31bf662340a43a 2013-01-12 Call it fixed-point.
+e4ecce3bfe464cf56a3838db945ca0e528e5555f 2013-01-11 Disable FT_CONFIG_OPTION_OLD_INTERNALS.
+53c0cb59ed2baa7de418a1e841529a8774be6fb2 2013-01-11 Typos, whitespace.
+ad9d5c972662b4cb890b7859a245a815fa9e6027 2013-01-10 [base] Update the overflow protection bit.
+4412e74de785d60484a3c79e620a9de635a5e40e 2013-01-10 Minor comment improvements.
+6b83a3674c3a0a30a2f2d685ba8a3d15de139480 2013-01-09 [base, pshinter] Use FT_ABS, FT_MIN, and FT_MAX for readability.
+09dbb059e1d5397ec468b1539d0fabaa6ecd066d 2013-01-08 [base] Clean up trigonometric core.
+5dd9657fe8bc8d70d1119ed0dbd5de1545688239 2013-01-02 [base] Use rounding in CORDIC iterations.
+b4ac30b0edf57e9ea3e12d0e4279f16b5ba121ee 2013-01-02 [base] Reduce trigonometric algorithms.
+50e634abe12efbe9589da8881e62d389b0de324e 2013-01-02 * src/pshinter/pshalgo.h: Remove unused code.
+7d6dc907d8fac01bb0d5517c86fa34e3ec79c713 2012-12-27 * src/truetype/ttgload.c (tt_loader_init): Add more tracing.
+2ef0a19842ae1172bec153225328aaaeaf130a18 2012-12-23 [type1] Fix handling of /FontBBox in MM fonts. Problem reported by Del Merritt <del@alum.mit.edu>
+f44f3f0e4393d3e085a79d9010159328dff893ae 2012-12-23 Formatting, minor internal documentation improvement.
+cbf3fb39fd6aafc33505ea514b414021a43baaa8 2012-12-21 * src/tools/cordic.py: Bring up to date with trigonometric core.
+3ffb822e925bef3f61dd29796e16e322f00451fc 2012-12-21 Check parameters of `FT_Outline_New'. Problem reported by Robin Watts <robin.watts@artifex.com>.
 c6a66b49e64e9a21c013f23c867d238cf1aa98cb 2012-12-20 * Version 2.4.11 released. ==========================
 d7383b7b86bf9d8e37d73d2ac1a7fec54d8f746e 2012-12-20 [base] Improve trigonometric core.
 768590a99d36e87dd00df30435f274a4567f6ce3 2012-12-20 * src/base/ftobjs.c (ft_property_do): Fix compiler warning.
