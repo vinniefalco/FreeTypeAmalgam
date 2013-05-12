@@ -1,4 +1,4 @@
-# FreeType 2.4.11 Amalgamation
+# FreeType 2.4.12 Amalgamation
 
 A distribution of the [FreeType][1] library in amalgamated source code form.
 
