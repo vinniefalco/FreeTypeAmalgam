@@ -1,3 +1,11 @@
+b112fa41907710113aa63cbe3434f12f54096163 2013-05-12 Fix Savannah bug #38967.
+cbcf33d1d9dfd0db7a3cd013b5870da1366a65c6 2013-05-12 Introduce unsigned 64bit type (if available).
+d51ac9c7c6aa5773c806495052a7a862fce6a7e2 2013-05-12 Fix Savannah bug #38968.
+ea2b4756e44664d8b716e8761fd1f49e7ffa98f5 2013-05-10 [sfnt] Clean up bitmap code.
+f6aa089f12ce3a7b7ee3d1b548969c2cb879b893 2013-05-10 */* [FT_CONFIG_OPTION_OLD_INTERNALS]: Remove macro and guarded code.
+cecf93ef90c660a8b0b45e5adbbfb5ea443fb6b9 2013-05-08 * Version 2.4.12 released. ==========================
+2688a6c65e48a68df75684e522f2d554947da95d 2013-05-08 * docs/CHANGES: Updated.
+ccbdc3c42184db820e8b7bb19608ce3ba297d6de 2013-05-08 * src/autofit/aflatin.c (af_latin_metrics_scale_dim): Typo.
 26568611186ca19e8b18afd2a9b0c2ce6c188165 2013-05-05 Synchronize `ftconfig.h'.
 dd192ef0b4f43e9ed2c69f37cb6e2d2062405cde 2013-05-05 Fix compilation with C++.
 d135e27c23c089c64581065d5af6f962012fdf37 2013-05-05 Fix 64bit compilation issues.

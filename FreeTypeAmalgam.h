@@ -1673,36 +1673,10 @@ FT_BEGIN_HEADER
   /* */
 
   /*
-   * Define this variable if you want to keep the layout of internal
-   * structures that was used prior to FreeType 2.2.  This also compiles in
-   * a few obsolete functions to avoid linking problems on typical Unix
-   * distributions.
-   *
-   * For embedded systems or building a new distribution from scratch, it
-   * is recommended to disable the macro since it reduces the library's code
-   * size and activates a few memory-saving optimizations as well.
+   *  This macro is obsolete.  Support has been removed in FreeType
+   *  version 2.5.
    */
 /* #define FT_CONFIG_OPTION_OLD_INTERNALS */
-
-  /*
-   *  To detect legacy cache-lookup call from a rogue client (<= 2.1.7),
-   *  we restrict the number of charmaps in a font.  The current API of
-   *  FTC_CMapCache_Lookup() takes cmap_index & charcode, but old API
-   *  takes charcode only.  To determine the passed value is for cmap_index
-   *  or charcode, the possible cmap_index is restricted not to exceed
-   *  the minimum possible charcode by a rogue client.  It is also very
-   *  unlikely that a rogue client is interested in Unicode values 0 to 15.
-   *
-   *  NOTE: The original threshold was 4 deduced from popular number of
-   *        cmap subtables in UCS-4 TrueType fonts, but now it is not
-   *        irregular for OpenType fonts to have more than 4 subtables,
-   *        because variation selector subtables are available for Apple
-   *        and Microsoft platforms.
-   */
-
-#ifdef FT_CONFIG_OPTION_OLD_INTERNALS
-#define FT_MAX_CHARMAP_CACHEABLE 15
-#endif
 
   /*
    * This macro is defined if either unpatented or native TrueType
@@ -2038,6 +2012,17 @@ FT_BEGIN_HEADER
   /*                                                                       */
   typedef signed XXX  FT_Int64;
 
+  /*************************************************************************/
+  /*                                                                       */
+  /* <Type>                                                                */
+  /*    FT_UInt64                                                          */
+  /*                                                                       */
+  /*    A typedef for a 64bit unsigned integer type.  The size depends on  */
+  /*    the configuration.  Only defined if there is real 64bit support;   */
+  /*    otherwise, it gets emulated with a structure (if necessary).       */
+  /*                                                                       */
+  typedef unsigned XXX  FT_UInt64;
+
   /* */
 
 #endif
@@ -2075,13 +2060,15 @@ FT_BEGIN_HEADER
 
   /* FT_LONG64 must be defined if a 64-bit type is available */
 #define FT_LONG64
-#define FT_INT64  long
+#define FT_INT64   long
+#define FT_UINT64  unsigned long
 
 #elif defined( _MSC_VER ) && _MSC_VER >= 900  /* Visual C++ (and Intel C++) */
 
   /* this compiler provides the __int64 type */
 #define FT_LONG64
-#define FT_INT64  __int64
+#define FT_INT64   __int64
+#define FT_UINT64  unsigned __int64
 
 #elif defined( __BORLANDC__ )  /* Borland C++ */
 
@@ -2090,7 +2077,8 @@ FT_BEGIN_HEADER
 
   /* this compiler provides the __int64 type */
 #define FT_LONG64
-#define FT_INT64  __int64
+#define FT_INT64   __int64
+#define FT_UINT64  unsigned __int64
 
 #elif defined( __WATCOMC__ )   /* Watcom C++ */
 
@@ -2099,13 +2087,15 @@ FT_BEGIN_HEADER
 #elif defined( __MWERKS__ )    /* Metrowerks CodeWarrior */
 
 #define FT_LONG64
-#define FT_INT64  long long int
+#define FT_INT64   long long int
+#define FT_UINT64  unsigned long long int
 
 #elif defined( __GNUC__ )
 
   /* GCC provides the `long long' type */
 #define FT_LONG64
-#define FT_INT64  long long int
+#define FT_INT64   long long int
+#define FT_UINT64  unsigned long long int
 
 #endif /* FT_SIZEOF_LONG == (64 / FT_CHAR_BIT) */
 
@@ -2129,7 +2119,8 @@ FT_BEGIN_HEADER
 #endif /* FT_LONG64 && !FT_CONFIG_OPTION_FORCE_INT64 */
 
 #ifdef FT_LONG64
-  typedef FT_INT64  FT_Int64;
+  typedef FT_INT64   FT_Int64;
+  typedef FT_UINT64  FT_UInt64;
 #endif
 
 #define FT_BEGIN_STMNT  do {
@@ -8910,7 +8901,7 @@ FT_BEGIN_HEADER
    */
 #define FREETYPE_MAJOR  2
 #define FREETYPE_MINOR  4
-#define FREETYPE_PATCH  11
+#define FREETYPE_PATCH  12
 
   /*************************************************************************/
   /*                                                                       */
